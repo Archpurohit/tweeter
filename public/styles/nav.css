@@ -1,12 +1,41 @@
 nav {
   height: 120px;
+  width: 100%;
   background-color: #4056A1;
-  color:#FFFFFF ;
-  font-family: bungee;
-  font-size:xx-large;
-text-indent: 1.5em;
-#tweet{
-  text-align: left:
+  display:flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 00;
 }
+
+nav #main{
+margin-left: 1.5em;
+color:#FFFFFF ;
+font-family: bungee;
+font-size: xx-large;
+padding-top: 80px;
+}
+
+.containers{
+display:block;
+color:#FFFFFF ;
+padding-right: 1.5em;
+padding-top: 35px;
+}
+
+
+nav #tweet{
+text-transform: none;
+color:#FFFFFF ;
+font-size: medium;
+font-family: bungee;
+padding-right: 1.5em;
+border: 30px;
+}
+
+nav #logo{
+  color: red;
+  padding-left: 1.5em;
+
 
 }

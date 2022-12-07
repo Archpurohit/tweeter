@@ -1,0 +1,29 @@
+header{
+  height: 400px;
+  width: 100%;
+  background-color:antiquewhite;
+
+}
+
+
+header #avatar{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ padding-top: 120px ;
+}
+
+header #name{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main tweet-text{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid red;
+}
