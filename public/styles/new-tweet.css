@@ -17,9 +17,7 @@ main #tweet-button{
   font-family: bungee;
   font-size: 1.125rem;
   font-weight: 700;
-  /* letter-spacing: -.01em; */
   line-height: 1.3;
-  /* padding: 1rem 1.25rem; */
   position: relative;
   text-align: left;
   text-decoration: none;
@@ -28,6 +26,7 @@ main #tweet-button{
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  border: hidden;
 }
 
 main #tweet-text{
@@ -39,9 +38,50 @@ main #tweet-text{
   border-bottom: 2px solid black;
 }
 
-main #counter{
-  text-align: end;
+
+ #under-tweet{
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
 }
 
 
+#tweet-container{
+height: 200px;
+padding: 12px 20px;
+margin: 8px 0;
+box-sizing: border-box;
+border: none;
+border-bottom: 2px solid black;
+display: flex;
+justify-content: space-between;
+}
 
+#user_name{
+  height: 50px;
+  width: 150px;
+}
+
+#userAt{
+  height: 50px;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+}
+
+#time-stamp{
+  height: 30px;
+  width: 80px;
+  font-size: medium;
+}
+
+.retweet:hover{
+  box-shadow:none;
+  color: bisque;
+}
+
+
+#bottom_newtweet{
+  display: flex;
+  justify-content: space-between;
+}

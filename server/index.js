@@ -2,7 +2,7 @@
 
 // Basic express setup:
 
-const PORT          = 8080;
+const PORT          = 8000;
 const express       = require("express");
 const bodyParser    = require("body-parser");
 const app           = express();
@@ -37,10 +37,6 @@ app.post("/tweets", (req,res) =>{
 
 })
 
-// document,querySelector("button").addeventlistener("click", postTweet);
-// function postTweet(){
-//   alert("click registered");
-// }
 
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
