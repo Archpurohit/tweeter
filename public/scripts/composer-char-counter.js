@@ -1,4 +1,3 @@
-const { text } = require("body-parser");
 
 $(document).ready(function() {
   $("#tweet-text").on("input", function () {
@@ -13,9 +12,8 @@ $(document).ready(function() {
     if (charCounter < 0 ) {
       $counterElement.addClass("invalid");
     }
-    (charCounter > 140){
+    (charCounter > 140);
 
-    }
    { $counterElement.removeClass("invalid");
     }
   });
