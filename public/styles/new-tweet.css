@@ -17,7 +17,6 @@ main #tweet-button {
   font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.3;
-  position: relative;
   text-align: left;
   text-decoration: none;
   transform: translateZ(0) scale(1);
@@ -26,7 +25,8 @@ main #tweet-button {
   -webkit-user-select: none;
   touch-action: manipulation;
   border: hidden;
-  position: absolute;
+  position: static;
+
 }
 
 main #tweet-text{
@@ -42,7 +42,7 @@ main #tweet-text{
   width: 100%;
   height: 100px;
   padding: 12px 20px;
-  border-bottom: 5px solid black;
+  /* border-bottom: 5px solid black; */
 
   margin: 8px 0;
 }
@@ -71,8 +71,8 @@ main #tweet-text{
 }
 
 #time-stamp {
-  height: 30px;
-  width: 80px;
+  height: 20px;
+  width: 100px;
   font-size: medium;
 }
 

@@ -4,33 +4,11 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function () {
-  // Test / driver code (temporary). Eventually will get this from the server.
-  const data = [
-    {
-      user: {
-        name: "Newton",
-        avatars: "https://i.imgur.com/73hZDYK.png",
-        handle: "@SirIsaac",
-      },
-      content: {
-        text: "If I have seen further it is by standing on the shoulders of giants",
-      },
-      created_at: 1461116232227,
-    },
-    {
-      user: {
-        name: "Descartes",
-        avatars: "https://i.imgur.com/nlhLi3I.png",
-        handle: "@rd",
-      },
-      content: {
-        text: "Je pense , donc je suis",
-      },
-      created_at: 1461113959088,
-    },
-  ];
 
-  const renderTweets = function (tweets) {
+  const data = [];
+
+
+  const renderTweets = (tweets) => {
     $("#tweet-container").empty();
     for (let tweet of tweets) {
       const $tweet = createTweetElement(tweet);
@@ -38,9 +16,39 @@ $(document).ready(function () {
     }
   };
 
-  const createTweetElement = function (tweet) {
-    let $tweet = $(`
+    $('.submit-tweet').on('submit', function(event){
+      event.preventDefault();
+      const maxChar = 140;
+      const myTweet =  $("#tweet-text").val()
 
+
+    if (!myTweet) {
+      alert("You can't tweet nothing!")
+    } else if (myTweet.length - maxChar > 0) {
+      alert("you can only tweet 140 characters")
+
+    } else {
+      const newTweet = $(this).serialize();
+      $.ajax({
+        type: 'POST',
+        url: "/tweets/",
+        data: newTweet
+      })
+      loadTweets();
+    }
+    });
+
+    const loadTweets = function() {
+      $.get("/tweets/", function(myTweet) {
+        renderTweets(myTweet.reverse());
+      });
+    };
+
+    loadTweets();
+
+
+  function createTweetElement(tweet) {
+    let $tweet = $(`
   <article>
 <div id="tweet-containers">
       <header id="new-tweetheader">
@@ -51,13 +59,11 @@ $(document).ready(function () {
       <div>
             <span>${tweet.user.handle}</span>
           </div>
-
           </header>
           <input type="text" value="${tweet.content.text}" id="tweet-new" class="field left" readonly>
-
       <footer>
       <div id="bottom_newtweet">
-          <span id="time-stamp">${tweet.content.created_at}</span>
+      <span id="time-stamp">${timeago.format(tweet.created_at)}</span>
           <span id="retweet">
            <i class="retweet fa-solid fa-retweet"></i>
            <i class="retweet fa-solid fa-flag"></i>
@@ -71,6 +77,6 @@ $(document).ready(function () {
 
 </article>`);
     return $tweet;
-  };
+  }
   renderTweets(data);
 });
