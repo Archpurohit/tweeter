@@ -29,18 +29,15 @@ $(document).ready(function () {
 
     } else {
       const newTweet = $(this).serialize();
-      $.ajax({
-        type: 'POST',
-        url: "/tweets/",
-        data: newTweet
-      })
+      $.post("/tweets/", newTweet, () => {
+      });
       loadTweets();
     }
     });
 
     const loadTweets = function() {
-      $.get("/tweets/", function(myTweet) {
-        renderTweets(myTweet.reverse());
+      $.get("/tweets/", function(newTweet) {
+        renderTweets(newTweet.reverse());
       });
     };
 
