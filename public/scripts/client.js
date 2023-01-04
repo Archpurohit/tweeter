@@ -5,6 +5,9 @@
  */
 $(document).ready(function () {
 
+  $("#error-empty").hide();
+  $("#error-long").hide();
+
   const data = [];
 
 
@@ -21,12 +24,14 @@ $(document).ready(function () {
       const maxChar = 140;
       const myTweet =  $("#tweet-text").val()
 
-
     if (!myTweet) {
-      alert("You can't tweet nothing!")
+      $("#error-empty").slideDown("slow");
+      $("#error-long").hide();
+      console.log("test")
     } else if (myTweet.length - maxChar > 0) {
-      alert("you can only tweet 140 characters")
-
+      $("#error-long").slideDown("slow");
+      $("#error-empty").hide();
+      console.log("test2")
     } else {
       const newTweet = $(this).serialize();
       $.post("/tweets/", newTweet, () => {

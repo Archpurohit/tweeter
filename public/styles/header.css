@@ -10,12 +10,21 @@ header #avatar{
    display: flex;
    align-items: center;
    justify-content: center;
+   flex-direction: column;
  padding-top: 120px ;
+ background-color: #e28b09;
+
+
 }
 
 header #name{
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 10px;
 }
 
+header #username{
+  color: white;
+  font-family: bungee;
+}
