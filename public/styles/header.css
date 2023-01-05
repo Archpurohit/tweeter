@@ -1,7 +1,7 @@
 header{
   height: 400px;
   width: 100%;
-  background-color:antiquewhite;
+  background-color:#f4f1ec;
 
 }
 
@@ -11,20 +11,28 @@ header #avatar{
    align-items: center;
    justify-content: center;
    flex-direction: column;
- padding-top: 120px ;
+ /* padding-top: 120px ; */
  background-color: #e28b09;
-
-
+ margin-top: 110px;
 }
 
 header #name{
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 10px;
+  /* padding-bottom: 10px; */
 }
 
 header #username{
   color: white;
   font-family: bungee;
 }
+
+
+@media screen and (min-width: 1024px) {
+  #avatar{
+    float: left;
+    transform: translate(50%, 50%);
+    z-index: 0;
+  }
+  }

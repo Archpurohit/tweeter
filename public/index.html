@@ -58,45 +58,48 @@
       </div>
     </nav>
 
-    <header>
-      <div id="avatar">
-        <img src="/images/profile-hex.png" />
-        <div id="username">Amy Mansal</div>
-      </div>
+  <header>
+    <div id="avatar">
+      <img src="/images/profile-hex.png" />
+      <div id="username">Amy Mansell </div>
+    </div>
 
-    </header>
+  </header>
+
+
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form class="submit-tweet" action="/tweets" method="POST">
-          <span id="error-empty" class="error-message">
-            <i class="fa-solid fa-user-helmet-safety"></i>
-            <h3>You must have something on your mind!</h3>
-            <i class="fa-sharp fa-solid fa-triangle-person-digging"></i>
-          </span>
-            <span id="error-long" class="error-message">
+
+      <main class="container">
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+          <form class="submit-tweet" action="/tweets" method="POST">
+            <span id="error-empty" class="error-message">
               <i class="fa-solid fa-user-helmet-safety"></i>
-              <h3>you can only tweet 140 characters</h3>
+              <h3>You must have something on your mind!</h3>
               <i class="fa-sharp fa-solid fa-triangle-person-digging"></i>
             </span>
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-          <div id="under-tweet">
-            <span>
-              <button id="tweet-button" type="submit">
-                Tweet
-              </button>
-            </span>
-            <span>
-              <output name="counter" class="counter" for="tweet-text"
-                >140</output>
+              <span id="error-long" class="error-message">
+                <i class="fa-solid fa-user-helmet-safety"></i>
+                <h3>you can only tweet 140 characters</h3>
+                <i class="fa-sharp fa-solid fa-triangle-person-digging"></i>
               </span>
-          </div>
-        </form>
-      </section>
-      <section id="tweet-container"></section>
-    </main>
+            <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+            <div id="under-tweet">
+              <span>
+                <button id="tweet-button" type="submit">
+                  Tweet
+                </button>
+              </span>
+              <span>
+                <output name="counter" class="counter" for="tweet-text"
+                  >140</output>
+                </span>
+            </div>
+          </form>
+        </section>
+        <section id="tweet-container"></section>
+      </main>
   </body>
 </html>
 
