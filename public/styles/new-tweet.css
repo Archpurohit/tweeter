@@ -23,10 +23,9 @@ main #tweet-button {
   touch-action: manipulation;
   border: hidden;
   position: static;
-
 }
 
-main #tweet-text{
+main #tweet-text {
   width: 100%;
   height: 100px;
   padding: 12px 20px;
@@ -35,7 +34,7 @@ main #tweet-text{
   margin: 8px 0;
 }
 
-#tweet-new{
+#tweet-new {
   width: 100%;
   height: 100px;
   padding: 12px 20px;
@@ -76,7 +75,6 @@ main #tweet-text{
 .retweet:hover {
   box-shadow: none;
   color: bisque;
-
 }
 
 #new-tweetheader {
@@ -84,4 +82,3 @@ main #tweet-text{
   display: flex;
   justify-content: space-between;
 }
-

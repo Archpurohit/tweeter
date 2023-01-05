@@ -4,12 +4,10 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function () {
-
   $("#error-empty").hide();
   $("#error-long").hide();
 
   const data = [];
-
 
   const renderTweets = (tweets) => {
     $("#tweet-container").empty();
@@ -19,35 +17,33 @@ $(document).ready(function () {
     }
   };
 
-    $('.submit-tweet').on('submit', function(event){
-      event.preventDefault();
-      const maxChar = 140;
-      const myTweet =  $("#tweet-text").val()
+  $(".submit-tweet").on("submit", function (event) {
+    event.preventDefault();
+    const maxChar = 140;
+    const myTweet = $("#tweet-text").val();
 
     if (!myTweet) {
       $("#error-empty").slideDown("slow");
       $("#error-long").hide();
-      console.log("test")
+      console.log("test");
     } else if (myTweet.length - maxChar > 0) {
       $("#error-long").slideDown("slow");
       $("#error-empty").hide();
-      console.log("test2")
+      console.log("test2");
     } else {
       const newTweet = $(this).serialize();
-      $.post("/tweets/", newTweet, () => {
-      });
+      $.post("/tweets/", newTweet, () => {});
       loadTweets();
     }
+  });
+
+  const loadTweets = function () {
+    $.get("/tweets/", function (newTweet) {
+      renderTweets(newTweet.reverse());
     });
+  };
 
-    const loadTweets = function() {
-      $.get("/tweets/", function(newTweet) {
-        renderTweets(newTweet.reverse());
-      });
-    };
-
-    loadTweets();
-
+  loadTweets();
 
   function createTweetElement(tweet) {
     let $tweet = $(`
@@ -62,7 +58,9 @@ $(document).ready(function () {
             <span>${tweet.user.handle}</span>
           </div>
           </header>
-          <input type="text" value="${tweet.content.text}" id="tweet-new" class="field left" readonly>
+          <input type="text" value="${
+            tweet.content.text
+          }" id="tweet-new" class="field left" readonly>
       <footer>
       <div id="bottom_newtweet">
       <span id="time-stamp">${timeago.format(tweet.created_at)}</span>

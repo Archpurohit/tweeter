@@ -1,5 +1,4 @@
-
-$(document).ready(function() {
+$(document).ready(function () {
   $("#tweet-text").on("input", function () {
     const maxChar = 140;
     const inputChar = $(this).val().length;
@@ -9,12 +8,13 @@ $(document).ready(function() {
 
     $counterElement.text(charCounter);
 
-    if (charCounter < 0 ) {
+    if (charCounter < 0) {
       $counterElement.addClass("invalid");
     }
-    (charCounter > 140);
+    charCounter > 140;
 
-   { $counterElement.removeClass("invalid");
+    {
+      $counterElement.removeClass("invalid");
     }
   });
 });
