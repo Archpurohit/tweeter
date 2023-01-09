@@ -7,8 +7,6 @@ $(document).ready(function () {
   $("#error-empty").hide();
   $("#error-long").hide();
 
-  const data = [];
-
   const renderTweets = (tweets) => {
     $("#tweet-container").empty();
     for (let tweet of tweets) {
@@ -43,9 +41,13 @@ $(document).ready(function () {
     });
   };
 
+  // $("body").empty();
+
+
   loadTweets();
 
   function createTweetElement(tweet) {
+
     let $tweet = $(`
   <article>
 <div id="tweet-containers">

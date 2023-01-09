@@ -3,18 +3,18 @@ $(document).ready(function () {
     const maxChar = 140;
     const inputChar = $(this).val().length;
     const charCounter = maxChar - inputChar;
+    console.log(charCounter)
 
     const $counterElement = $(this).parent().find(".counter");
 
     $counterElement.text(charCounter);
 
-    if (charCounter < 0) {
-      $counterElement.addClass("invalid");
-    }
-    charCounter > 140;
-
-    {
-      $counterElement.removeClass("invalid");
+    if (charCounter < 0 || charCounter > 140) {
+      console.log("ABC")
+      // $counterElement.addClass("invalid");
+      $counterElement.css("color","red")
+    } else {
+      $counterElement.css("color","black")
     }
   });
 });

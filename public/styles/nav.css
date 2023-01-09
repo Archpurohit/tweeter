@@ -26,7 +26,8 @@ nav #main {
   color: #ffffff;
   font-family: bungee;
   font-size: xx-large;
-  padding-top: 80px;
+  padding-top: 50px;
+
 }
 
 .containers {
@@ -40,12 +41,12 @@ nav #tweet {
   text-transform: none;
   color: #ffffff;
   font-size: medium;
-  font-family: bungee;
+  font-family: 'Source Sans Pro', sans-serif;
   padding-right: 1.5em;
   border: 30px;
 }
 
 nav #logo {
   color: red;
-  padding-left: 1.5em;
+  padding-left: 3.5em;
 }
