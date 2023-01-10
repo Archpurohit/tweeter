@@ -2,6 +2,8 @@ main #tweet-text {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 0px;
+
 }
 
 main #tweet-button {
@@ -29,18 +31,30 @@ main #tweet-text {
   width: 100%;
   height: 100px;
   padding: 12px 20px;
-  border-bottom: 5px solid black;
-
+  border-bottom: 3px solid black;
+  margin-bottom: 5px;
   margin: 8px 0;
+  background-color: #f4f1ec;
 }
 
-#tweet-new {
-  width: 100%;
-  height: 100px;
-  padding: 12px 20px;
-  /* border-bottom: 5px solid black; */
+@media screen and (min-width: 1024px){
+  #tweet-containers{
+    height: 200px;
+    border: 2px solid black;
+    box-sizing: border-box;
+    width: 900px;
+    margin-top: 25px;
+  }
+}
 
+
+
+#tweet-new {
+  padding: 12px 20px;
+  border-bottom: 2px solid black;
   margin: 8px 0;
+  background-color: #f4f1ec;
+  word-wrap: break-word;
 }
 
 #under-tweet {
@@ -50,12 +64,22 @@ main #tweet-text {
   height: 100px;
 }
 
+
+@media screen and (min-width: 1024px){
+  #tweet-containers {
+    height: 200px;
+    border: 2px solid black;
+    box-sizing: border-box;
+    width: 700px;
+    margin-top: 25px;
+  }
+}
+
 #tweet-containers {
-  height: 200px;
-  border: 1px solid black;
+  border: 2px solid black;
   box-sizing: border-box;
-  width: 100%;
-  margin: auto;
+  margin-top: 25px;
+  background-color: #f4f1ec;
 }
 
 #bottom_newtweet {
@@ -63,7 +87,8 @@ main #tweet-text {
   justify-content: space-between;
   align-content: flex-end;
   font-size: medium;
-  padding-bottom: 20px;
+
+
 }
 
 #time-stamp {
@@ -81,4 +106,24 @@ main #tweet-text {
   height: 60px;
   display: flex;
   justify-content: space-between;
+}
+
+.new-tweet{
+  width: 700px;
+}
+
+@media screen and (min-width: 1024px){
+  .new-tweet{
+    width: 700px;
+  }
+}
+
+@media screen and (min-width: 1024px){
+#field-left{
+  border: 0;
+  border-bottom: 5px solid black;
+  outline: 0;
+  width: 500px;
+  background-color: #f4f1ec;
+}
 }

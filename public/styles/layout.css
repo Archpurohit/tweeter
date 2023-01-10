@@ -42,6 +42,9 @@ body {
   align-items: center;
   background-color: #f4f1ec;
   margin-top: 10px;
+  display: grid;
+  place-items: center;
+  margin: 10px auto;
 }
 
 /* desktop screen */
@@ -55,3 +58,4 @@ body {
     display: flex;
   }
 }
+

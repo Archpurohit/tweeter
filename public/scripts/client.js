@@ -60,9 +60,7 @@ $(document).ready(function () {
             <span>${tweet.user.handle}</span>
           </div>
           </header>
-          <input type="text" value="${
-            tweet.content.text
-          }" id="tweet-new" class="field left" readonly>
+          <p id="tweet-new" class="field-left"> ${tweet.content.text} </p>
       <footer>
       <div id="bottom_newtweet">
       <span id="time-stamp">${timeago.format(tweet.created_at)}</span>
