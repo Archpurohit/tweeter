@@ -55,6 +55,7 @@ main #tweet-text {
   margin: 8px 0;
   background-color: #f4f1ec;
   word-wrap: break-word;
+  height: 100px;
 }
 
 #under-tweet {
@@ -80,6 +81,12 @@ main #tweet-text {
   box-sizing: border-box;
   margin-top: 25px;
   background-color: #f4f1ec;
+
+}
+
+
+#tweet-containers:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #bottom_newtweet {
