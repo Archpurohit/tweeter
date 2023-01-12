@@ -15,21 +15,24 @@ $(document).ready(function () {
     }
   };
 
+  // create jquery for submitting tweet
   $(".submit-tweet").on("submit", function (event) {
     event.preventDefault();
     const maxChar = 140;
     const myTweet = $("#tweet-text").val();
-
+// if there is no tweet characters sends error codes
     if (!myTweet) {
-      $("#error-empty").slideDown("slow");
       $("#error-long").hide();
-      console.log("test");
+      $("#error-empty").slideDown("slow").delay(10000).slideUp("slow");
+
     } else if (myTweet.length - maxChar > 0) {
-      $("#error-long").slideDown("slow");
       $("#error-empty").hide();
-      console.log("test2");
+      $("#error-long").slideDown("slow").delay(1000).slideUp("slow");;
+
+
     } else {
       const newTweet = $(this).serialize();
+      $("#tweet-text").val("")
       $.post("/tweets/", newTweet, () => {});
       loadTweets();
     }
@@ -41,9 +44,9 @@ $(document).ready(function () {
     });
   };
 
-  // $("body").empty();
 
 
+// loading tweets to the browser in the same style but not edit feature
   loadTweets();
 
   function createTweetElement(tweet) {
@@ -60,6 +63,7 @@ $(document).ready(function () {
             <span>${tweet.user.handle}</span>
           </div>
           </header>
+          </script>
           <p id="tweet-new" class="field-left"> ${tweet.content.text} </p>
       <footer>
       <div id="bottom_newtweet">
@@ -80,3 +84,4 @@ $(document).ready(function () {
   }
   renderTweets(data);
 });
+
