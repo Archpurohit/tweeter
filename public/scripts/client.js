@@ -7,6 +7,7 @@ $(document).ready(function () {
   $("#error-empty").hide();
   $("#error-long").hide();
 
+
   const renderTweets = (tweets) => {
     $("#tweet-container").empty();
     for (let tweet of tweets) {
@@ -20,6 +21,7 @@ $(document).ready(function () {
     event.preventDefault();
     const maxChar = 140;
     const myTweet = $("#tweet-text").val();
+    // $("<div>").text(myTweet);
 // if there is no tweet characters sends error codes
     if (!myTweet) {
       $("#error-long").hide();
@@ -29,14 +31,20 @@ $(document).ready(function () {
       $("#error-empty").hide();
       $("#error-long").slideDown("slow").delay(1000).slideUp("slow");;
 
-
     } else {
-      const newTweet = $(this).serialize();
+      const newTweet = ($(this).serialize());
       $("#tweet-text").val("")
-      $.post("/tweets/", newTweet, () => {});
-      loadTweets();
+      const $counterElement = $(this).parent().find(".counter");
+      $counterElement.text(140);
+
+      $.post("/tweets/", newTweet, () => {
+        loadTweets();
+      });
+
     }
   });
+
+
 
   const loadTweets = function () {
     $.get("/tweets/", function (newTweet) {
@@ -50,9 +58,8 @@ $(document).ready(function () {
   loadTweets();
 
   function createTweetElement(tweet) {
-
     let $tweet = $(`
-  <article>
+    <article>
 <div id="tweet-containers">
       <header id="new-tweetheader">
       <div id="top-newtweet">
@@ -64,7 +71,7 @@ $(document).ready(function () {
           </div>
           </header>
           </script>
-          <p id="tweet-new" class="field-left"> ${tweet.content.text} </p>
+          <p id="tweet-new" class="field-left"></p>
       <footer>
       <div id="bottom_newtweet">
       <span id="time-stamp">${timeago.format(tweet.created_at)}</span>
@@ -77,11 +84,10 @@ $(document).ready(function () {
       </footer>
 
 </div>
-
-
 </article>`);
+$tweet.find("#tweet-new").text(tweet.content.text)
     return $tweet;
   }
-  renderTweets(data);
+  // renderTweets(data);
 });
 
